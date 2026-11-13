@@ -29,6 +29,7 @@
     padding:18px 20px;margin:18px 0}
   .card p:last-child{margin-bottom:0}
   .en{color:var(--muted);font-size:15px}
+  .en h2{color:var(--ink)}
   footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);
     font-size:13px;color:var(--muted)}
 </style>
@@ -36,17 +37,25 @@
 <body>
 <main>
   <h1>Gizlilik Politikası</h1>
-  <p class="date">Yazboz · Son güncelleme: 24 Ağustos 2026</p>
+  <p class="date">Yazboz · Sürüm 1.1.0 · Son güncelleme: 11 Kasım 2026 ·
+    <a href="#english">English version below</a></p>
 
   <div class="card">
-    <p><strong>Yazboz hiçbir kişisel veri toplamaz, saklamaz ya da aktarmaz.</strong>
-    Uygulama internete bağlanmaz. Girdiğiniz her şey yalnızca kendi
-    cihazınızda kalır.</p>
+    <p><strong>Yazboz kimliğinizi bilmez: hesap yok, ad yok, e-posta yok,
+    reklam kimliği yok.</strong> Maçlarınız, oyuncularınız ve puanlarınız
+    yalnızca kendi cihazınızda kalır. Uygulama dışarıyla üç yerde konuşur:
+    satın alma için Apple'ın App Store altyapısıyla, abonelik kaydı için
+    RevenueCat'le, kullanım istatistiği için Google Firebase Analytics'le.
+    Bu hizmetlerin hiçbirine adınız, e-postanız ya da sizi doğrudan tanımlayan
+    başka bir bilgi gitmez; giden şey, yalnız bu <em>kurulumu</em> temsil eden
+    rastgele bir kimlik ve aşağıda sayılan teknik bilgilerdir (cihaz modeli,
+    iOS ve uygulama sürümü, dil, App Store ülkesi, bağlantının IP
+    adresi).</p>
   </div>
 
-  <h2>Uygulamanın tuttuğu bilgiler</h2>
-  <p>Yazboz, oyuncu adlarını, maçları, elleri ve puanları cihazınızdaki bir
-  veritabanında saklar. Bu bilgiler:</p>
+  <h2>Uygulamanın cihazınızda tuttuğu bilgiler</h2>
+  <p>Yazboz, oyuncu adlarını, maçları, elleri, puanları, grupları ve ev
+  kurallarını cihazınızdaki bir veritabanında saklar. Bu bilgiler:</p>
   <ul>
     <li>hiçbir sunucuya gönderilmez,</li>
     <li>geliştirici tarafından görülemez,</li>
@@ -54,26 +63,109 @@
     <li>uygulamayı sildiğinizde cihazınızdan tamamen silinir.</li>
   </ul>
 
-  <h2>Yedekleme</h2>
-  <p>Yedek alma özelliğini kullandığınızda uygulama bir dosya oluşturur ve bu
-  dosyayı iOS'un paylaşım penceresine verir. Dosyanın nereye kaydedileceğine
-  yalnızca siz karar verirsiniz. Yazboz bu dosyayı hiçbir yere yüklemez.</p>
+  <h2>Maç paylaşımı</h2>
+  <p>Maç paylaştığınızda uygulama, seçtiğiniz maçların oyuncu adlarını ve el
+  sonuçlarını içeren bir dosya oluşturur ve bu dosyayı iOS'un paylaşım
+  penceresine verir. Dosyayı kime göndereceğinize yalnızca siz karar
+  verirsiniz. Yazboz bu dosyayı hiçbir yere yüklemez. Size gönderilen bir
+  dosyayı içe aktardığınızda maçlar yalnızca bu cihaza eklenir.</p>
 
-  <h2>Analitik ve izleme yok</h2>
-  <p>Uygulamada analitik aracı, çökme raporlayıcı, reklam ağı ya da izleme
-  teknolojisi bulunmaz. Reklam kimliği (IDFA) okunmaz, izleme izni istenmez.</p>
+  <h2>Kurulum kimliği ve Destek kimliği</h2>
+  <p>Uygulama ilk açıldığında rastgele bir kurulum kimliği (UUID) üretir ve
+  cihazın güvenli anahtar zincirinde (Keychain) saklar. Bu kimlik sizinle,
+  Apple hesabınızla ya da cihazınızın reklam kimliğiyle ilişkili değildir;
+  iCloud'a gitmez, başka bir cihaza taşınmaz; uygulama silinip aynı cihaza
+  yeniden kurulursa korunur. Aşağıdaki iki hizmette tutulan her şey bu
+  kimliğe bağlıdır.</p>
+  <p>Kimliğin ilk sekiz karakteri Ayarlar → Hakkında ekranında
+  <em>Destek kimliği</em> olarak görünür (dokununca tamamı panoya kopyalanır).
+  Bize yazarken paylaşırsanız sorununuzu o kuruluma bağlı olarak
+  inceleyebiliriz; paylaşmak zorunda değilsiniz.</p>
 
-  <h2>Uygulama içi satın alma</h2>
-  <p>Yazboz Pro satın alması Apple'ın App Store altyapısı üzerinden yürür.
-  Ödeme bilgileriniz Apple'da işlenir; geliştiriciye kart bilgisi, ad ya da
-  e-posta ulaşmaz. Uygulama yalnızca satın almanın yapılıp yapılmadığı
-  bilgisini Apple'dan alır ve bunu cihazınızda tutar. Apple'ın veri
-  uygulamaları için
+  <h2>Abonelik kaydı (RevenueCat)</h2>
+  <p>Yazboz Pro aboneliğinin durumu, Apple'ın bize ilettiği satın alma
+  geçmişiyle birlikte <a href="https://www.revenuecat.com/privacy">RevenueCat</a>
+  üzerinde kurulum kimliğine bağlı olarak tutulur:</p>
+  <ul>
+    <li>satın alma, yenileme, iptal, iade ve bitiş tarihleri; satın alınan
+      ürün (aylık, yıllık ya da eski tek seferlik Yazboz Pro);</li>
+    <li>uygulamanın ilk kurulum tarihi, aynı cihaza yeniden kurulup
+      kurulmadığı ve kurulduysa tarihi;</li>
+    <li>son açılış zamanı (en çok altı saatte bir güncellenir);</li>
+    <li>uygulama sürümü, platform (iOS) ve işletim sistemi sürümü.</li>
+  </ul>
+  <p>RevenueCat'in yazılım kiti her istekte teknik başlıklar da gönderir ve
+  bunu kapatan bir ayar yoktur: cihazın satıcı kimliği (IDFV — Apple'ın aynı
+  geliştiricinin uygulamaları için ürettiği, reklam kimliğinden farklı ve bu
+  geliştiricinin uygulamaları silinince sıfırlanan kimlik), cihaz modeli, iOS
+  ve uygulama sürümü, tercih edilen diller, App Store ülkesi ve izleme izni
+  durumu (uygulama izin istemediği için "sorulmadı"); bağlantının IP adresi
+  her internet isteğinde olduğu gibi sunucuya ulaşır. Kart bilgisi, ad,
+  e-posta ya da reklam kimliği (IDFA) bu kayıtta yoktur.</p>
+  <p>"Satın almaları geri yükle"ye dokunduğunuzda Apple hesabınızdaki Yazboz
+  Pro işlemleri bu kuruluma bağlanır; aynı abonelik daha önce başka bir
+  kurulumda kayıtlıysa buraya taşınır.</p>
+
+  <h2>Analitik — kullanım istatistiği (Firebase Analytics)</h2>
+  <p>Uygulama, kurulum kimliğine bağlı anonim kullanım olaylarını
+  Google'ın Firebase Analytics hizmetine gönderir:</p>
+  <ul>
+    <li>Firebase'in kendi otomatik olayları: ilk açılış, oturum başlangıcı,
+      kullanım süresi, uygulama ve iOS güncellemesi;</li>
+    <li>abonelik sayfasının görüntülenmesi (hangi kilitli bölümden ya da
+      Ayarlar'dan gelindiği ile);</li>
+    <li>satın almanın başlatılması, tamamlanması ya da vazgeçilmesi (ürün
+      kimliği ile);</li>
+    <li>"Satın almaları geri yükle"ye dokunulması;</li>
+    <li>kurulumun abone olup olmadığı (evet/hayır).</li>
+  </ul>
+  <p>Maçlar, oyuncu adları ve puanlar hiçbir olaya girmez. Firebase için
+  reklam kimliği (IDFA) okunmaz, izleme izni istenmez, satıcı kimliği (IDFV)
+  toplama kapalıdır, reklam kişiselleştirme ve ekran görüntüleme kaydı
+  kapalıdır; çökme raporlayıcı ve reklam ağı yoktur. Google Analytics kendi
+  çalışması için ayrıca bir uygulama örneği kimliği üretir ve cihaz modeli,
+  iOS sürümü, dil ve bağlantının IP adresinden türettiği kaba bölge bilgisini
+  alır. Google'ın veri uygulamaları için
+  <a href="https://policies.google.com/privacy">Google Gizlilik Politikası</a>.</p>
+
+  <h2>Ne için kullanılır, ne için kullanılmaz</h2>
+  <p>Yukarıdaki bilgiler yalnız üç amaçla kullanılır: aboneliğinizi
+  doğrulamak ve açık tutmak, satın almalarınızı geri yüklemek ve uygulamayı
+  geliştirmek (hangi bölümlerin kullanıldığını, abonelik sayfasının nereden
+  açıldığını görmek). Reklam için kullanılmaz, uygulamalar arası izleme
+  yapılmaz, veri satılmaz ve pazarlama amacıyla kimseyle paylaşılmaz.
+  Uygulamada reklam yoktur.</p>
+
+  <h2>Verilerin işlendiği yer</h2>
+  <p>Abonelik kaydı RevenueCat'in, kullanım istatistiği Google'ın
+  sunucularında tutulur; bu sunucular Türkiye dışında, başta Amerika Birleşik
+  Devletleri olmak üzere yurt dışında olabilir.</p>
+
+  <h2>Yazboz Pro aboneliği ve ödeme</h2>
+  <p>Yazboz Pro aylık ya da yıllık, otomatik yenilenen bir aboneliktir.
+  Satın alma Apple'ın App Store altyapısı üzerinden yürür; ödeme
+  bilgileriniz Apple'da işlenir, geliştiriciye kart bilgisi, ad ya da
+  e-posta ulaşmaz. Uygulama Apple'dan yalnızca satın alma ve abonelik
+  durumunu (plan, başlangıç, bitiş, yenileme) alır ve bunu cihazınızda
+  tutar. İptal ve plan değişikliği Apple hesabınızın abonelik ayarlarından
+  yapılır; Ayarlar → Yazboz Pro → "Aboneliği yönet" sizi oraya götürür.
+  Daha önce tek seferlik satın alanların Pro'su süresiz açık kalır; onlara
+  abonelik sorulmaz. Apple'ın veri uygulamaları için
   <a href="https://www.apple.com/legal/privacy/">Apple Gizlilik Politikası</a>.</p>
 
+  <h2>Silme talebi</h2>
+  <p>Kurulumunuza ait abonelik kaydının ve kullanım istatistiğinin
+  silinmesini isterseniz Ayarlar → Hakkında ekranındaki Destek kimliğiyle
+  birlikte aşağıdaki adrese yazın; RevenueCat ve Firebase'deki kaydı siler ve
+  size haber veririz. Uygulamayı kullanmaya devam ederseniz aynı kurulum
+  kimliğiyle yeni kayıt oluşur. Cihazınızdaki maçlar ve oyuncular bize
+  ulaşmadığı için bizden silinmesi gereken bir kopyası yoktur; uygulamayı
+  silmek onları da siler.</p>
+
   <h2>Çocuklar</h2>
-  <p>Uygulama her yaşa uygundur ve hiç kimseden bilgi toplamadığı için
-  çocuklardan da bilgi toplamaz.</p>
+  <p>Uygulama her yaşa uygundur ve kimseden kişisel bilgi istemez. Yukarıda
+  anlatılan sınırlı teknik veriler yaşa bakılmaksızın bütün kullanıcılar için
+  aynıdır.</p>
 
   <h2>Değişiklikler</h2>
   <p>Bu politika değişirse bu sayfa güncellenir ve üstteki tarih değişir.</p>
@@ -83,24 +175,150 @@
 
   <hr style="border:0;border-top:1px solid var(--line);margin:40px 0">
 
-  <h2>English summary</h2>
-  <div class="en">
-    <p><strong>Yazboz collects no personal data.</strong> The app never connects
-    to the internet. Player names, matches and scores are stored only in a
-    local database on your device, are never transmitted anywhere, and are
-    deleted when you delete the app.</p>
-    <p>Backups create a file that is handed to the iOS share sheet; you alone
-    choose where it goes. There is no analytics, no crash reporting, no
-    advertising and no tracking; the IDFA is never accessed.</p>
-    <p>The Yazboz Pro in-app purchase is processed by Apple. The developer
-    receives no payment details, name or email address — only whether the
-    purchase exists, which is stored on your device.</p>
-    <p>Contact:
-      <a href="mailto:yazbozkingbatak@gmail.com">yazbozkingbatak@gmail.com</a></p>
+  <div class="en" id="english">
+  <h1>Privacy Policy</h1>
+  <p class="date">Yazboz · Version 1.1.0 · Last updated: 11 November 2026</p>
+
+  <div class="card">
+    <p><strong>Yazboz does not know who you are: no account, no name, no
+    e-mail, no advertising ID.</strong> Your matches, players and scores stay
+    on your device. The app talks to three outside services: Apple's App
+    Store for purchases, RevenueCat for the subscription record, and Google
+    Firebase Analytics for usage statistics. None of them receives your name,
+    e-mail address or anything else that directly identifies you; they receive
+    a random ID that stands for this <em>installation</em>, plus the technical
+    details listed below (device model, iOS and app version, language, App
+    Store country, the connection's IP address).</p>
+  </div>
+
+  <h2>What the app keeps on your device</h2>
+  <p>Yazboz stores player names, matches, rounds, scores, groups and house
+  rules in a database on your device. This data:</p>
+  <ul>
+    <li>is never sent to any server,</li>
+    <li>cannot be seen by the developer,</li>
+    <li>is not shared with third parties,</li>
+    <li>is deleted from your device when you delete the app.</li>
+  </ul>
+
+  <h2>Sharing matches</h2>
+  <p>When you share matches, the app creates a file containing the selected
+  matches' player names and round results and hands it to the iOS share
+  sheet. You alone decide who receives it; Yazboz does not upload the file
+  anywhere. When you import a file someone sent you, the matches are added
+  to this device only.</p>
+
+  <h2>Install ID and Support ID</h2>
+  <p>On first launch the app generates a random install ID (UUID) and stores
+  it in the device's secure keychain. It is not linked to you, to your Apple
+  account or to your device's advertising ID; it does not sync to iCloud or
+  move to another device, and it survives deleting and reinstalling the app
+  on the same device. Everything held by the two services below is tied to
+  this ID.</p>
+  <p>Its first eight characters appear as the <em>Support ID</em> in
+  Settings → About (tap to copy the full ID). If you include it when you
+  write to us, we can look into your issue for that installation; you do not
+  have to share it.</p>
+
+  <h2>Subscription record (RevenueCat)</h2>
+  <p>The status of your Yazboz Pro subscription, together with the purchase
+  history Apple reports to us, is kept by
+  <a href="https://www.revenuecat.com/privacy">RevenueCat</a> under the
+  install ID:</p>
+  <ul>
+    <li>purchase, renewal, cancellation, refund and expiry dates; the product
+      bought (monthly, yearly, or the earlier one-time Yazboz Pro);</li>
+    <li>the app's first-install date, whether it was reinstalled on the same
+      device and, if so, when;</li>
+    <li>the last-open time (updated at most every six hours);</li>
+    <li>app version, platform (iOS) and OS version.</li>
+  </ul>
+  <p>RevenueCat's SDK also sends technical headers with every request, and
+  there is no setting to turn them off: the device's vendor identifier (IDFV
+  — an ID Apple generates per developer, distinct from the advertising ID,
+  reset when all of this developer's apps are deleted), device model, iOS and
+  app version, preferred languages, App Store country and tracking-permission
+  status ("not asked", since the app never asks); the connection's IP
+  address reaches the server as with any internet request. No payment
+  details, name, e-mail or advertising ID (IDFA) are in this record.</p>
+  <p>When you tap "Restore purchases", the Yazboz Pro transactions on your
+  Apple account are linked to this installation; if the same subscription
+  was recorded under another installation, it moves here.</p>
+
+  <h2>Analytics — usage statistics (Firebase Analytics)</h2>
+  <p>The app sends anonymous usage events tied to the install ID to Google's
+  Firebase Analytics:</p>
+  <ul>
+    <li>Firebase's own automatic events: first open, session start,
+      engagement time, app and iOS updates;</li>
+    <li>viewing the subscription page (with which locked section, or
+      Settings, it was opened from);</li>
+    <li>starting, completing or cancelling a purchase (with the product
+      ID);</li>
+    <li>tapping "Restore purchases";</li>
+    <li>whether the installation is subscribed (yes/no).</li>
+  </ul>
+  <p>No match data, player names or scores are ever included. For Firebase
+  the advertising ID (IDFA) is never accessed, no tracking permission is
+  requested, vendor-ID (IDFV) collection is disabled, ad personalisation and
+  screen-view logging are off; there is no crash reporting and no ad network.
+  Google Analytics generates its own app-instance ID for its operation and
+  receives the device model, OS version, language and a coarse region derived
+  from the IP address. See the
+  <a href="https://policies.google.com/privacy">Google Privacy Policy</a>
+  for Google's data practices.</p>
+
+  <h2>What it is used for, and what it is not</h2>
+  <p>The data above is used for three purposes only: verifying your
+  subscription and keeping it unlocked, restoring your purchases, and
+  improving the app (seeing which sections are used and where the
+  subscription page is opened from). It is not used for advertising or
+  cross-app tracking, it is not sold, and it is not shared with anyone for
+  marketing. The app contains no ads.</p>
+
+  <h2>Where the data is processed</h2>
+  <p>The subscription record is held on RevenueCat's servers and the usage
+  statistics on Google's; these servers may be located outside Türkiye,
+  primarily in the United States.</p>
+
+  <h2>Yazboz Pro subscription and payment</h2>
+  <p>Yazboz Pro is an auto-renewing monthly or yearly subscription. Purchases
+  go through Apple's App Store; your payment details are processed by Apple,
+  and the developer never receives card details, name or e-mail address. The
+  app receives only the purchase and subscription status (plan, start, end,
+  renewal) from Apple and stores it on your device. Cancelling or changing
+  plan is done in your Apple account's subscription settings; Settings →
+  Yazboz Pro → "Manage subscription" takes you there. Anyone who bought the
+  earlier one-time purchase keeps Pro indefinitely and is not asked to
+  subscribe. See the
+  <a href="https://www.apple.com/legal/privacy/">Apple Privacy Policy</a>
+  for Apple's data practices.</p>
+
+  <h2>Deletion requests</h2>
+  <p>To have the subscription record and usage statistics for your
+  installation deleted, write to the address below and include the Support
+  ID from Settings → About; we will delete the record at RevenueCat and
+  Firebase and let you know. If you keep using the app, a new record is
+  created under the same install ID. The matches and players on your device
+  never reach us, so there is no copy for us to delete; deleting the app
+  deletes them.</p>
+
+  <h2>Children</h2>
+  <p>The app is suitable for all ages and asks nobody for personal
+  information. The same limited technical data described above applies to all
+  users, regardless of age.</p>
+
+  <h2>Changes</h2>
+  <p>If this policy changes, this page is updated and the date at the top
+  changes.</p>
+
+  <h2>Contact</h2>
+  <p><a href="mailto:yazbozkingbatak@gmail.com?subject=Yazboz%20privacy">yazbozkingbatak@gmail.com</a></p>
   </div>
 
   <footer>
-    <a href="index.html">← Destek sayfası</a> · Yazboz · 2026 Berke Tonoz
+    <a href="index.html">← Destek sayfası</a> · Yazboz · 2026 ·
+    <a href="mailto:yazbozkingbatak@gmail.com">yazbozkingbatak@gmail.com</a>
   </footer>
 </main>
 </body>
